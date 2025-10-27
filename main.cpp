@@ -56,7 +56,7 @@ int main() {
 
     //TWO
      start = high_resolution_clock::now();
-    vector.sort(numbers.begin(), numbers.end())
+    sort(numbers.begin(), numbers.end())
      end = high_resolution_clock::now();
     auto durationSv = duration_cast<microseconds>(end - start);
     long long vectorS = durationSv.count();
