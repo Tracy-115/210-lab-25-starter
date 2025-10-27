@@ -29,7 +29,7 @@ int main() {
         numbers.push_back(c);
     }
     auto end = high_resolution_clock::now();
-    auto duration = duration_cast<milliseconds>(end - start);
+    auto duration = duration_cast<microseconds>(end - start);
     long long vectorT = duration.count();
     
     //TWO
@@ -39,9 +39,9 @@ int main() {
         lists.push_back(c);
     }
     end = high_resolution_clock::now();
-    auto duration = duration_cast<milliseconds>(end - start);
+    auto duration = duration_cast<microseconds>(end - start);
     long long listT = duration.count();
-    return 0;
+    
 
     //THREE
     set<string> SET;
@@ -50,7 +50,7 @@ int main() {
         SET.insert(c);
     }
     end = high_resolution_clock::now();
-    auto duration = duration_cast<milliseconds>(end - start);
+    auto duration = duration_cast<microseconds>(end - start);
     long long setT = duration.count();
 
     cout << vectorT << listT << setT << endl;
