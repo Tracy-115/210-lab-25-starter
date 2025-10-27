@@ -14,6 +14,7 @@ int main() {
     ifstream fin("codes.txt");
     if (!fin.is_open()){
         cout << "Could not open the file :'(" << endl;
+        return 1;
     }
 
     vector<string>data;
@@ -55,18 +56,18 @@ int main() {
 
     //TWO
      start = high_resolution_clock::now();
-    vector.sort(numbers.being(), numbers.end())
+    vector.sort(numbers.begin(), numbers.end())
      end = high_resolution_clock::now();
-    auto durationSORT = duration_cast<microseconds>(end - start);
-    long long vectorS = durationSORT.count();
+    auto durationSv = duration_cast<microseconds>(end - start);
+    long long vectorS = durationSv.count();
     
     start = high_resolution_clock::now();
     lists.sort();
     end = high_resolution_clock::now();
-    auto durationSORT = duration_cast<microseconds>(end - start);
-    long long listS= durationSORT.count();
+    auto durationSl = duration_cast<microseconds>(end - start);
+    long long listS= durationSl.count();
     
-    long long setSORT = -1;
+    //long long setSORT = -1;
 
     cout << "Set" << "      " << vectorS << "      " << listS << "      " << setSORT << endl;
 
@@ -78,8 +79,8 @@ int main() {
     start = high_resolution_clock::now();
     vectorIns.insert(vectorIns.begin()+vectorIns.size()/2, setValue);
     end = high_resolution_clock::now();
-    auto durationVECTOR = duration_cast<microseconds>(end - start);
-    long long vectorI = durationVECTOR.count();
+    auto durationVI = duration_cast<microseconds>(end - start);
+    long long vectorI = durationVI.count();
     
     list<string> listIns = lists;
     auto listMiddle = listIns.begin();
@@ -87,24 +88,24 @@ int main() {
     start = high_resolution_clock::now();
     listIns.insert(listMiddle,setValue);
     end = high_resolution_clock::now();
-    auto durationLIST = duration_cast<microseconds>(end - start);
-    long long listI = durationLIST.count();
+    auto durationLI = duration_cast<microseconds>(end - start);
+    long long listI = durationLI.count();
     
     set<string> setIns= SET;
     start = high_resolution_clock::now();
     setIns.insert(setValue);
     end = high_resolution_clock::now();
-    auto durationSET = duration_cast<microseconds>(end - start);
-    long long setI = durationSET.count();
+    auto durationSETI = duration_cast<microseconds>(end - start);
+    long long setI = durationSETI.count();
     cout << "Insert" << "      " << vectorI << "      " << listI << "      " << setI << endl;
 
     //FoOUR
     vector<string> vectorDel=numbers;
     start = high_resolution_clock::now();
-    vectorIns.erase(vectorIns.begin()+vectorIns.size()/2, setValue);
+    vectorIns.erase(vectorIns.begin()+vectorIns.size()/2);
     end = high_resolution_clock::now();
-    auto durationVECTOR = duration_cast<microseconds>(end - start);
-    long long vectorE = durationVECTOR.count();
+    auto durationVECTORE = duration_cast<microseconds>(end - start);
+    long long vectorE = durationVECTORE.count();
 
     list<string> listDel = lists;
     auto listDelMid = listDel.begin();
@@ -112,8 +113,8 @@ int main() {
     start = high_resolution_clock::now();
     listDel.erase(listDelMid);
     end = high_resolution_clock::now();
-    auto durationLIST = duration_cast<microseconds>(end - start);
-    long long listE = durationLIST.count();
+    auto durationLISTE = duration_cast<microseconds>(end - start);
+    long long listE = durationLISTE.count();
 
     set<string> setDel= SET;
     auto setMiddle = setDel.begin();
@@ -121,8 +122,8 @@ int main() {
     start = high_resolution_clock::now();
     setDel.erase(setMiddle);
     end = high_resolution_clock::now();
-    auto durationSET = duration_cast<microseconds>(end - start);
-    long long setE = durationSET.count();
+    auto durationSETE = duration_cast<microseconds>(end - start);
+    long long setE = durationSETE.count();
     cout << "Delete" << "      " << vectorE << "      " << listE << "      " << setE << endl;
     return 0;
 }
