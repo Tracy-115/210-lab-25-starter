@@ -76,7 +76,7 @@ int main() {
     vectorIns.insert(vectorIns.begin()+vectroIns.size()/2, setValue);
     start = high_resolution_clock::now();
     auto durationVECTOR = duration_cast<microseconds>(end - start);
-    long long vectorT = durationVECTOR.count();
+    long long vectorI = durationVECTOR.count();
     //TWO
     list<string> listIns = listI;
     auto listMiddle = listIns.begin();
@@ -85,16 +85,42 @@ int main() {
     listIns.insert(listMiddle,setValue);
     end = high_resolution_clock::now();
     auto durationLIST = duration_cast<microseconds>(end - start);
-    long long listT = durationLIST.count();
+    long long listI = durationLIST.count();
     //THREE
-    set<string> SET;
+    set<string> setIns= setI;
     start = high_resolution_clock::now();
-    for (const auto &c : data){
-        SET.insert(c);
-    }
+    setIns.insert(newValue);
     end = high_resolution_clock::now();
     auto durationSET = duration_cast<microseconds>(end - start);
-    long long setT = durationSET.count();
+    long long setI = durationSET.count();
+    cout << "" << "      " << vectorI << "      " << listI << "      " << setI << endl;
+
+    //ONE
+    vector<string> vectorDel=vectorI;
+    start = high_resolution_clock::now();
+    vectorIns.erase(vectorIns.begin()+vectroIns.size()/2, setValue);
+    start = high_resolution_clock::now();
+    auto durationVECTOR = duration_cast<microseconds>(end - start);
+    long long vectorE = durationVECTOR.count();
+    //TWO
+    list<string> listDel = listI;
+    auto listDelMid = listDel.begin();
+    advance(listDelMid, listDel.size() / 2);
+    start = high_resolution_clock::now();
+    listDel.erase(listMiddle,setValue);
+    end = high_resolution_clock::now();
+    auto durationLIST = duration_cast<microseconds>(end - start);
+    long long listE = durationLIST.count();
+    //THREE
+    set<string> setDel= setI;
+    auto setMiddle = setDel.begin();
+    advance(setMiddle, setDel.size() / 2);
+    start = high_resolution_clock::now();
+    setDel.erase(newValue);
+    end = high_resolution_clock::now();
+    auto durationSET = duration_cast<microseconds>(end - start);
+    long long setE = durationSET.count();
+    cout << "" << "      " << vectorE << "      " << listE << "      " << setE << endl;
     return 0;
 }
 
