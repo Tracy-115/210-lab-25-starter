@@ -6,10 +6,12 @@
 #include <set>
 #include <fstream>
 #include <algorithm>
+#include <iomanip>
 using namespace std;
 using namespace std::chrono;
 
 int main() {
+    cout << setw(12) << "Operation"<< setw(12) << "Vector"<< setw(12) << "List"<< setw(12) << "Set" << endl;
     
     ifstream fin("codes.txt");
     if (!fin.is_open()){
@@ -52,7 +54,7 @@ int main() {
     auto durationSET = duration_cast<microseconds>(end - start);
     long long setT = durationSET.count();
 
-    cout << "Read" << "      " << vectorT << "      " << listT << "      " << setT << endl;
+    cout << setw(12) << "Read" << setw(12) << vectorT << setw(12) << listT << setw(12) << setT << endl;
 
     //TWO
      start = high_resolution_clock::now();
@@ -69,7 +71,7 @@ int main() {
     
     long long setSORT = -1;
 
-    cout << "Set" << "      " << vectorS << "      " << listS << "      " << setSORT << endl;
+    cout << setw(12) << "Set" << setw(12) << vectorS << setw(12) << listS << setw(12) << setSORT << endl;
 
 
     //THREE
@@ -97,7 +99,7 @@ int main() {
     end = high_resolution_clock::now();
     auto durationSETI = duration_cast<microseconds>(end - start);
     long long setI = durationSETI.count();
-    cout << "Insert" << "      " << vectorI << "      " << listI << "      " << setI << endl;
+    cout << setw(12) << "Insert" << setw(12) << vectorI << setw(12) <<  listI << setw(12) << setI << endl;
 
     //FoOUR
     vector<string> vectorDel=numbers;
@@ -124,7 +126,7 @@ int main() {
     end = high_resolution_clock::now();
     auto durationSETE = duration_cast<microseconds>(end - start);
     long long setE = durationSETE.count();
-    cout << "Delete" << "      " << vectorE << "      " << listE << "      " << setE << endl;
+    cout << setw(12) << "Delete" << setw(12) << vectorE << setw(12) << listE << setw(12) << setE << endl;
     return 0;
 }
 
