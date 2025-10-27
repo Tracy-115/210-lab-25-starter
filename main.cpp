@@ -67,7 +67,7 @@ int main() {
     auto durationSl = duration_cast<microseconds>(end - start);
     long long listS= durationSl.count();
     
-    //long long setSORT = -1;
+    long long setSORT = -1;
 
     cout << "Set" << "      " << vectorS << "      " << listS << "      " << setSORT << endl;
 
