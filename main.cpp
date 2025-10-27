@@ -5,24 +5,19 @@ using namespace std;
 using namespace std::chrono;
 
 int main() {
-    // Start timing
-    auto start = high_resolution_clock::now();
+    
+    
 
-    // Example loop to measure
+    //ONE
     vector<int> numbers;
-    for(int i = 0; i < 1000000; ++i) {
-        numbers.push_back(i);
+    auto start = high_resolution_clock::now();
+    for (const auto &c : data){
+        numbers.push_back(c);
     }
-
-    // End timing
     auto end = high_resolution_clock::now();
-
-    // Calculate duration
     auto duration = duration_cast<milliseconds>(end - start);
-
-    // Output the duration in milliseconds
-    std::cout << "Time taken: " << duration.count() << " milliseconds\n";
-
+    long long vectorT = duration.count();
+    
     return 0;
 }
 
