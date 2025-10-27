@@ -23,7 +23,7 @@ int main() {
     fin.close();
 
     //ONE
-    vector<int> numbers;
+    vector<string> numbers;
     auto start = high_resolution_clock::now();
     for (const auto &c : data){
         numbers.push_back(c);
