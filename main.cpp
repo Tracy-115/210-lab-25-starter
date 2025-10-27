@@ -57,13 +57,10 @@ int main() {
 
     //ONE
     auto start = high_resolution_clock::now();
-    
-    for (const auto &c : data){
-        numbers.push_back(c);
-    }
+    vector.sort(vector.being(), vector.end())
     auto end = high_resolution_clock::now();
-    auto durationVECTOR = duration_cast<microseconds>(end - start);
-    long long vectorT = durationVECTOR.count();
+    auto durationSORT = duration_cast<microseconds>(end - start);
+    long long vectorS = durationSORT.count();
     
     //TWO
     start = high_resolution_clock::now();
@@ -75,6 +72,8 @@ int main() {
 
     //THREE
     long long setSORT = -1;
+
+    cout << "Set" << "      " << vectorS << "      " << listS << "      " << setSORT << endl;
     return 0;
 }
 
