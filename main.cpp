@@ -9,7 +9,17 @@ using namespace std::chrono;
 
 int main() {
     
+    ifstream fin("code.txt");
+    if (!fin.is_open()){
+        cout << "Could not open the file :'(" << endl;
+    }
 
+    vector<int>data;
+    string code;
+    while(fin>>code){
+        data.push_back(code);
+    }
+    fin.close();
 
     //ONE
     vector<int> numbers;
