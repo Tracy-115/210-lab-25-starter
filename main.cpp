@@ -5,6 +5,7 @@
 #include <list>
 #include <set>
 #include <fstream>
+#include <algorithm>
 using namespace std;
 using namespace std::chrono;
 
@@ -71,14 +72,14 @@ int main() {
 
     string setValue ="TESTCODE";
     //ONE
-    vector<string> vectorIns=vectorI;
+    vector<string> vectorIns=numbers;
     start = high_resolution_clock::now();
     vectorIns.insert(vectorIns.begin()+vectroIns.size()/2, setValue);
     start = high_resolution_clock::now();
     auto durationVECTOR = duration_cast<microseconds>(end - start);
     long long vectorI = durationVECTOR.count();
     //TWO
-    list<string> listIns = listI;
+    list<string> listIns = lists;
     auto listMiddle = listIns.begin();
     advance(listMiddle, listIns.size() / 2);
     start = high_resolution_clock::now();
@@ -87,23 +88,23 @@ int main() {
     auto durationLIST = duration_cast<microseconds>(end - start);
     long long listI = durationLIST.count();
     //THREE
-    set<string> setIns= setI;
+    set<string> setIns= SET;
     start = high_resolution_clock::now();
-    setIns.insert(newValue);
+    setIns.insert(setValue);
     end = high_resolution_clock::now();
     auto durationSET = duration_cast<microseconds>(end - start);
     long long setI = durationSET.count();
-    cout << "" << "      " << vectorI << "      " << listI << "      " << setI << endl;
+    cout << "Insert" << "      " << vectorI << "      " << listI << "      " << setI << endl;
 
     //ONE
-    vector<string> vectorDel=vectorI;
+    vector<string> vectorDel=numbers;
     start = high_resolution_clock::now();
     vectorIns.erase(vectorIns.begin()+vectroIns.size()/2, setValue);
     start = high_resolution_clock::now();
     auto durationVECTOR = duration_cast<microseconds>(end - start);
     long long vectorE = durationVECTOR.count();
     //TWO
-    list<string> listDel = listI;
+    list<string> listDel = lists;
     auto listDelMid = listDel.begin();
     advance(listDelMid, listDel.size() / 2);
     start = high_resolution_clock::now();
@@ -112,7 +113,7 @@ int main() {
     auto durationLIST = duration_cast<microseconds>(end - start);
     long long listE = durationLIST.count();
     //THREE
-    set<string> setDel= setI;
+    set<string> setDel= SET;
     auto setMiddle = setDel.begin();
     advance(setMiddle, setDel.size() / 2);
     start = high_resolution_clock::now();
@@ -120,7 +121,7 @@ int main() {
     end = high_resolution_clock::now();
     auto durationSET = duration_cast<microseconds>(end - start);
     long long setE = durationSET.count();
-    cout << "" << "      " << vectorE << "      " << listE << "      " << setE << endl;
+    cout << "Delete" << "      " << vectorE << "      " << listE << "      " << setE << endl;
     return 0;
 }
 
