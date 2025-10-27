@@ -1,12 +1,15 @@
 #include <iostream>
 #include <chrono>
 #include <vector>
+#include <string>
+#include <list>
+#include <set>
 using namespace std;
 using namespace std::chrono;
 
 int main() {
     
-    
+
 
     //ONE
     vector<int> numbers;
@@ -18,6 +21,26 @@ int main() {
     auto duration = duration_cast<milliseconds>(end - start);
     long long vectorT = duration.count();
     
+    //TWO
+    list<string> lists;
+    auto start = high_resolution_clock::now();
+    for (const auto &c : data){
+        lists.push_back(c);
+    }
+    auto end = high_resolution_clock::now();
+    auto duration = duration_cast<milliseconds>(end - start);
+    long long listT = duration.count();
+    return 0;
+
+    //THREE
+    set<string> SET;
+    auto start = high_resolution_clock::now();
+    for (const auto &c : data){
+        SET.insert(c);
+    }
+    auto end = high_resolution_clock::now();
+    auto duration = duration_cast<milliseconds>(end - start);
+    long long setT = duration.count();
     return 0;
 }
 
