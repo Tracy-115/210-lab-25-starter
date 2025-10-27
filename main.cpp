@@ -53,7 +53,7 @@ int main() {
     auto durationSET = duration_cast<microseconds>(end - start);
     long long setT = durationSET.count();
 
-    cout << vectorT << listT << setT << endl;
+    cout << "Read      " << "      " << vectorT << "      " << listT << "      " << setT << endl;
     return 0;
 }
 
