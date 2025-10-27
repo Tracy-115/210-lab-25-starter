@@ -53,7 +53,28 @@ int main() {
     auto durationSET = duration_cast<microseconds>(end - start);
     long long setT = durationSET.count();
 
-    cout << "Read      " << "      " << vectorT << "      " << listT << "      " << setT << endl;
+    cout << "Read" << "      " << vectorT << "      " << listT << "      " << setT << endl;
+
+    //ONE
+    auto start = high_resolution_clock::now();
+    
+    for (const auto &c : data){
+        numbers.push_back(c);
+    }
+    auto end = high_resolution_clock::now();
+    auto durationVECTOR = duration_cast<microseconds>(end - start);
+    long long vectorT = durationVECTOR.count();
+    
+    //TWO
+    start = high_resolution_clock::now();
+    list.sort();
+    end = high_resolution_clock::now();
+    auto durationSORT = duration_cast<microseconds>(end - start);
+    long long listS= durationSORT.count();
+    
+
+    //THREE
+    long long setSORT = -1;
     return 0;
 }
 
